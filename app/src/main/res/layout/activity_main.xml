@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -9,33 +9,31 @@
     tools:context=".MainActivity"
     android:padding="10dp">
 
-
     <Button
         android:id="@+id/btnShowToast"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="148dp"
-        android:layout_marginTop="152dp"
-        android:text="Show Toast"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="63dp"
+        android:text="Show Toast" />
 
     <EditText
         android:id="@+id/etUserMessage"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="165dp"
         android:ems="10"
-        android:hint="Enter your Message"
-        tools:layout_editor_absoluteX="90dp"
-        tools:layout_editor_absoluteY="307dp"
-        tools:ignore="MissingConstraints" />
+        android:text="Enter your massage"/>
 
     <Button
         android:id="@+id/btnSendMsgToNextActivity"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Send Data To Next Activity"
-        tools:layout_editor_absoluteX="163dp"
-        tools:layout_editor_absoluteY="425dp"
-        tools:ignore="MissingConstraints" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:layout_centerInParent="true"
+        android:text="Send Data To Next Activity" />
+
+
+</RelativeLayout>
