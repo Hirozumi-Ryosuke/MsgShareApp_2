@@ -25,7 +25,7 @@ class HobbiesAdapter(val context: Context, val hobbies: List<Hobby>) : RecyclerV
 
     inner class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
-        fun setData(hobby: Hobby?, pos:Int) {
+        fun setData(hobby: Hobby?, pos: Int) {
             itemView.txvTitle.text = hobby!!.title
         }
     }
