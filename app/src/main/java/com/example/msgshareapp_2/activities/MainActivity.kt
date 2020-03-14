@@ -1,10 +1,12 @@
-package com.example.msgshareapp_2
+package com.example.msgshareapp_2.activities
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
+import com.example.msgshareapp_2.R
+import com.example.msgshareapp_2.showToast
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -15,7 +17,7 @@ class MainActivity : AppCompatActivity() {
 
         btnShowToast.setOnClickListener {
             Log.i("MainActivity", "Button was clicked !")
-            Toast.makeText(this, "Button was clicked !", Toast.LENGTH_SHORT).show()
+            showToast("Button was clicked !", Toast.LENGTH_LONG)
         }
 
         btnSendMsgToNextActivity.setOnClickListener {
@@ -43,8 +45,6 @@ class MainActivity : AppCompatActivity() {
 
             val intent = Intent(this, HobbiesActiviy::class.java)
             startActivity(intent)
-
         }
-
     }
 }
