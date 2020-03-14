@@ -1,10 +1,10 @@
-package com.example.msgshareapp_2
+package com.example.msgshareapp_2.models
 
 data class Hobby(var title: String)
 
-object Suplier {
+object Supplier {
 
-    val hobbies = listOf<Hobby>(
+    val hobbies = listOf(
         Hobby("Swimming"),
         Hobby("Reading"),
         Hobby("Walking"),

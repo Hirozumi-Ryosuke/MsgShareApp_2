@@ -1,4 +1,4 @@
-package com.example.msgshareapp_2
+package com.example.msgshareapp_2.adapters
 
 import android.content.Context
 import android.content.Intent
@@ -7,10 +7,16 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
-import kotlinx.android.synthetic.main.activity_main.*
+import com.example.msgshareapp_2.models.Hobby
+import com.example.msgshareapp_2.R
+import com.example.msgshareapp_2.showToast
 import kotlinx.android.synthetic.main.list_item.view.*
 
-class HobbiesAdapter(val context: Context, val hobbies: List<Hobby>) : RecyclerView.Adapter<HobbiesAdapter.MyViewHolder>() {
+class HobbiesAdapter(val context: Context, private val hobbies: List<Hobby>) : RecyclerView.Adapter<HobbiesAdapter.MyViewHolder>() {
+
+    companion object {
+        val TAG: String = HobbiesAdapter::class.java.simpleName
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val view = LayoutInflater.from(context).inflate(R.layout.list_item, parent, false)
@@ -33,24 +39,33 @@ class HobbiesAdapter(val context: Context, val hobbies: List<Hobby>) : RecyclerV
 
         init {
             itemView.setOnClickListener{
-                Toast.makeText(context, currentHobby!!.title + " Clicked !", Toast.LENGTH_SHORT).show()
+                currentHobby?.let {
+                    context.showToast(currentHobby!!.title + " Clicked !")
+                }
             }
 
             itemView.imgShare.setOnClickListener{
 
-                val message: String = "My hobby is: " + currentHobby!!.title
+                currentHobby?.let {
+                    val message: String = "My hobby is: " + currentHobby!!.title
 
-                val intent = Intent()
-                intent.action = Intent.ACTION_SEND
-                intent.putExtra(Intent.EXTRA_TEXT, message)
-                intent.type = "text/plain"
+                    val intent = Intent()
+                    intent.action = Intent.ACTION_SEND
+                    intent.putExtra(Intent.EXTRA_TEXT, message)
+                    intent.type = "text/plain"
 
-                context.startActivity(Intent.createChooser(intent, "Please select app:"))
+                    context.startActivity(Intent.createChooser(intent, "Please select app:"))
+                }
+
+
             }
 
         }
 
         fun setData(hobby: Hobby?, pos: Int) {
+            hobby?.let {
+                itemView.txvTitle.text = hobby.title
+            }
             itemView.txvTitle.text = hobby!!.title
 
             this.currentHobby = hobby
