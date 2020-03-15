@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="btn_show_toast">通知</string>
+
+    <string name="btn_move_to_next_activity">移動</string>
+    <string name="btn_share_to_apps">共有</string>
+    <string name="btn_hobbies">ボタン</string>
+
+    <string name="et_enter_msg">メッセージに移動</string>
+
+    <string name="btn_was_clicked">ボタンがクリックされたよ!</string>
+
+</resources>
